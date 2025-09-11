@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">IDOC integration (UBC.idoc) | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/UBC/IDOC/documentation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" property="og:title" content="IDOC integration (UBC.idoc) | metalsXP services"><meta data-rh="true" name="description" content="Intro"><meta data-rh="true" property="og:description" content="Intro"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/UBC/IDOC/documentation"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/IDOC/documentation" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/IDOC/documentation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IDOC integration (UBC.idoc)","item":"https://metalsxp.services/products/UBC/IDOC/documentation"}]}</script><link rel="stylesheet" href="/assets/css/styles.e310121a.css">
-<script src="/assets/js/runtime~main.54d36a6e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ab4dbaf9.js" defer="defer"></script>
 <script src="/assets/js/main.31998f3b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,12 +35,12 @@ This is rather a generic approach and can be used in any process within SAP! It 
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="handler">Handler<a href="#handler" class="hash-link" aria-label="Direct link to Handler" title="Direct link to Handler">​</a></h3>
 <p>It is important to specify a handler that inherits from <code>/UBC/CL_BO_IDOC</code> or implements at least the interface <code>/UBC/IF_BO_IDOC</code> for a custom outbound process.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="outbound">Outbound<a href="#outbound" class="hash-link" aria-label="Direct link to Outbound" title="Direct link to Outbound">​</a></h4>
-<p>UBC integrates seamlessly in the SAP-standard outbound mechanism. This means, up to step &quot;transmit IDOC to party xy&quot; – it is a standard procedure.
+<p>UBC integrates seamlessly in the SAP-standard outbound mechanism. This means, up to step &quot;transmit IDOC to party xy&quot; - it is a standard procedure.
 Short summary:</p>
 <ul>
 <li>configure EDI output message for the document to be transmitted<br>
 <img decoding="async" loading="lazy" alt="EDI output message" src="/assets/images/image_003-fd91edf003c952b5ea6ac0ec3a71fba7.png" width="401" height="67" class="img_ev3q"></li>
-<li>configure partner determination (WE20) – outbound for specific partner<br>
+<li>configure partner determination (WE20) - outbound for specific partner<br>
 <img decoding="async" loading="lazy" alt="Partner determination" src="/assets/images/image_004-2edec3cf5c25ee6458bd3896545503d7.png" width="373" height="199" class="img_ev3q"></li>
 <li>now comes the UBC specific part and trigger when specifying the receiver port within the partner determination. Usually, a port is used for a PI or any other direct connections. Specify <code>/UBC/IDOC</code> to trigger UBC.<br>
 <img decoding="async" loading="lazy" alt="Port /UBC/IDOC" src="/assets/images/image_005-4a24974670f57d2ac1b1598e28df6329.png" width="394" height="316" class="img_ev3q"><br>
