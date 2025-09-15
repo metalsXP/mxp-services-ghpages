@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">UBC Business objects (UBC.bo) | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/UBC/BO/documentation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" property="og:title" content="UBC Business objects (UBC.bo) | metalsXP services"><meta data-rh="true" name="description" content="Intro"><meta data-rh="true" property="og:description" content="Intro"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/UBC/BO/documentation"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/BO/documentation" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/BO/documentation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UBC Business objects (UBC.bo)","item":"https://metalsxp.services/products/UBC/BO/documentation"}]}</script><link rel="stylesheet" href="/assets/css/styles.f4a519ad.css">
-<script src="/assets/js/runtime~main.5c9ae074.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.4ca85c78.js" defer="defer"></script>
 <script src="/assets/js/main.a9f8d7c4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -79,7 +79,7 @@ This is only applicable, if your Proxy implementation specifies a resource in me
 <p>Delivering standard REST services with our <a href="/products/UBC/FLOW/documentation">UBC.flow</a> component making use in standard object implementations <code>/UBC/CL_BO</code>.</p>
 <p>It is to emphasize that every step modelled within the standard delivery workflows does not require any user interaction/approval. If this should be required, please refer to the documentation of <a href="/products/UBC/FLOW/documentation">UBC.flow</a>. You are free to change the standard workflows as well as defining new ones.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="inbound">Inbound<a href="#inbound" class="hash-link" aria-label="Direct link to Inbound" title="Direct link to Inbound">​</a></h3>
-<p>This is the workflow triggered by an inbound message, see <a href="#inbound--ubc_in">Inbound - UBC_IN</a>, the workflow definition is <code>80000</code>.</p>
+<p>This is the workflow triggered by an inbound message, see <a href="#inbound---ubc_in">Inbound - UBC_IN</a>, the workflow definition is <code>80000</code>.</p>
 <p><img decoding="async" loading="lazy" alt="Inbound workflow" src="/assets/images/image_001-d29502e8d085ef259f37974ddab70d68.png" width="1405" height="274" class="img_ev3q"></p>
 <p>This is just a highl-level overview of its steps:</p>
 <ul>
@@ -88,7 +88,7 @@ This is only applicable, if your Proxy implementation specifies a resource in me
 <li>Error handling steps: workflow will be stuck at this point, until a restart is executed within <a href="/products/UBC/IO/documentation">UBC.io</a>. You are free to add error notifications, see <a href="/products/UBC/FLOW/documentation">UBC.flow</a> documentation.</li>
 </ul>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="outbound">Outbound<a href="#outbound" class="hash-link" aria-label="Direct link to Outbound" title="Direct link to Outbound">​</a></h3>
-<p>This is the workflow triggered by outbound message, see <a href="#outbound--ubc_out">Outbound - UBC_OUT</a>, the workflow definition is `80001.</p>
+<p>This is the workflow triggered by outbound message, see <a href="#outbound---ubc_out">Outbound - UBC_OUT</a>, the workflow definition is `80001.</p>
 <p><img decoding="async" loading="lazy" alt="Outbound workflow" src="/assets/images/image_002-56997db1c55e69d85e90e78dd1ef4b1e.png" width="1399" height="348" class="img_ev3q"></p>
 <p>This is just a highl-level overview of its steps:</p>
 <ul>
