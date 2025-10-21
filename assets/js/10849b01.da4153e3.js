@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkubc_services=self.webpackChunkubc_services||[]).push([[2464],{34285:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"QCERT"}')}}]);
