@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">QPPD | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/mdVC/connectors/qppd"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-mdVC-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-mdVC-current"><meta data-rh="true" property="og:title" content="QPPD | metalsXP services"><meta data-rh="true" name="description" content="QPPD linkage, master data, and synchronization"><meta data-rh="true" property="og:description" content="QPPD linkage, master data, and synchronization"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/mdVC/connectors/qppd"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/mdVC/connectors/qppd" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/mdVC/connectors/qppd" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Connectors","item":"https://metalsxp.services/products/mdVC/connectors/"},{"@type":"ListItem","position":2,"name":"QPPD","item":"https://metalsxp.services/products/mdVC/connectors/qppd/"}]}</script><link rel="stylesheet" href="/assets/css/styles.a4adb105.css">
-<script src="/assets/js/runtime~main.4bb88d91.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.943cb878.js" defer="defer"></script>
 <script src="/assets/js/main.ea04960f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -54,7 +54,7 @@
 <div class="language-abap codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-abap codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">method</span><span class="token plain"> /mxp/vcha_if_doc_link_config</span><span class="token token-operator punctuation" style="color:#393A34">~</span><span class="token plain">get_header_fields</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  e_header_id </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;ZZ1_HeaderId&#x27;</span><span class="token plain"> ##NO_TEXT</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  e_activation_session_ts </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;ZZ1_ActivationSession&#x27;</span><span class="token plain"> ##NO_TEXT</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">endmethod</span><span class="token punctuation" style="color:#393A34">.</span><br></span></code></pre></div></div>
 <h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="synchronization-configuration">Synchronization Configuration<a href="#synchronization-configuration" class="hash-link" aria-label="Direct link to Synchronization Configuration" title="Direct link to Synchronization Configuration" translate="no">​</a></h5>
 <p>The target QPPD object must be defined. The BADI <code>/mxp/vcha_qp_sync_vart_config</code> configures the specification type, target object type, and follow-up actions on the QPPD object after synchronization. The method <code>get_configuration</code> must be implemented; configuration can be plant-specific.<br>
-<img decoding="async" loading="lazy" alt="get_configuration()" src="/assets/images/image_017-68d3c38fbe61e66eecdf3f764b55981c.png" width="706" height="343" class="img_ev3q"></p>
+<img decoding="async" loading="lazy" alt="get_configuration()" src="/assets/images/image_017-bdd1e4ec11ba7a377cf5c15e5b3b49a9.png" width="738" height="373" class="img_ev3q"></p>
 <p><strong>Specification Type Contract</strong></p>
 <ul>
 <li class="">No Specification Group should be assigned in Specification Type Customizing.<br>
@@ -75,6 +75,10 @@
 <li class="">
 <p><strong>Object Type:</strong><br>
 <!-- -->Default implementation links to <code>MDVC_CONFIG</code>; keep this name if using the default.</p>
+</li>
+<li class="">
+<p><strong>Sales Document Key Element &quot;VBELN_ELEMENT&quot;</strong>
+The element in given Object Type, where the sales document number will be set &quot;after save&quot;. Due to late numbering, only active drafts will have the info consistently. This is just for information and visualization purposes. The default implementation states <code>VBELN</code> as name. Clear when no synchronization needed.</p>
 </li>
 <li class="">
 <p><strong>Key Parts VC:</strong><br>
@@ -153,7 +157,8 @@
 </ul>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Objects which have errors will not be promoted to released nor considered as obsolete. They wait for manual editing (as the configuration does).</p></div></div>
 <ul>
-<li class="">The relevant objects will be changed to &quot;released&quot;.</li>
+<li class="">The relevant objects will be changed to &quot;released&quot;.
+If the field <code>ELEMENT_VBELN</code> points to an element, the value will be set to the sales document. Due to late numbering, this is the first place where the numbers are available. The standard name for this element is <code>VBELN</code>, see <a href="#synchronization-configuration" class="">Synchronization Configuration</a>.</li>
 </ul>
 <p>If any error occurs, the standard <code>BGPF</code> unit will fail. Details are available in the standard transaction <code>SBGRFCMON</code>. For more sophisticated logic, consider using an <a href="https://ubc.services/IO/documentation" target="_blank" rel="noopener noreferrer" class="">UBC interface</a> instead.</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="delete-obsolete-objects">Delete obsolete Objects<a href="#delete-obsolete-objects" class="hash-link" aria-label="Direct link to Delete obsolete Objects" title="Direct link to Delete obsolete Objects" translate="no">​</a></h4>
