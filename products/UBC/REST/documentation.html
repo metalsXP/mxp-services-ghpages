@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">RESTful webservices (UBC.rest) | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/UBC/REST/documentation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" property="og:title" content="RESTful webservices (UBC.rest) | metalsXP services"><meta data-rh="true" name="description" content="Intro"><meta data-rh="true" property="og:description" content="Intro"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/UBC/REST/documentation"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/REST/documentation" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/REST/documentation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"RESTful webservices (UBC.rest)","item":"https://metalsxp.services/products/UBC/REST/documentation"}]}</script><link rel="stylesheet" href="/assets/css/styles.a4adb105.css">
-<script src="/assets/js/runtime~main.41031e44.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.7c6e5b74.js" defer="defer"></script>
 <script src="/assets/js/main.a20ef168.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -154,12 +154,27 @@ The path has to be valid according to the JAX-RS specification. Basically divide
 </ul>
 <p>To create the REST service, go to <a href="#customizing" class="">Customizing</a> and then:</p>
 <ul>
-<li class="">Create a new entry with an appropriate path</li>
-<li class="">For the REST Resource implementation, specify the pre-delivered class <code>/UBC/CL_REST_RESOURCE_IO_IF</code></li>
-<li class="">In the &quot;Parameters&quot; field, specify the <a class="" href="/products/UBC/IO/documentation">UBC.io interface</a> the resource will be linked to</li>
+<li class="">
+<p>Create a new entry with an appropriate path</p>
+</li>
+<li class="">
+<p>For the REST Resource implementation, specify the pre-delivered class <code>/UBC/CL_REST_RESOURCE_IO_IF</code></p>
+</li>
+<li class="">
+<p>In the &quot;Parameters&quot; field, specify the <a class="" href="/products/UBC/IO/documentation">UBC.io interface</a> the resource will be linked to
+<img decoding="async" loading="lazy" alt="REST Resource I/O linkage" src="/assets/images/image_003-0918c1dbd8d9b65f196657a0f8bf8277.png" width="1133" height="290" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>If you want to specify JSON pretty modes like &quot;PascalCase&quot; or &quot;camelCase&quot;, simply add values to &quot;Parameters&quot;, separated by the interface name with <code>$$$</code>. Default is &quot;low_case&quot; and simply shows ABAP names as lower case names. The following values are supported:</p>
+<ul>
+<li class=""><code>pascal</code> for PascalCase. An ABAP name like <code>tlg_name</code> will be <code>tlgName</code> in the JSON.</li>
+<li class=""><code>camel</code> for camelCase. An ABAP name like <code>tlg_name</code> will be <code>TlgName</code> in the JSON.</li>
+<li class="">for all other values (also not specified), default lower case is applied. An ABAP name like <code>tlg_name</code> will be <code>tlg_name</code> in the JSON.</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="REST Resource I/O linkage" src="/assets/images/image_003-0918c1dbd8d9b65f196657a0f8bf8277.png" width="1133" height="290" class="img_ev3q"><br>
-<!-- -->This can be used like any other REST resource and is visible in Swagger UI.</p>
+<p>Example: <code>TEST_OPERATION$$$pascal</code> links to interface <code>TEST_OPERATION</code> and applies PascalCase naming.</p>
+</li>
+</ul>
+<p>This can be used like any other REST resource and is visible in Swagger UI.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="standard-interfaces">Standard Interfaces<a href="#standard-interfaces" class="hash-link" aria-label="Direct link to Standard Interfaces" title="Direct link to Standard Interfaces" translate="no">​</a></h2>
 <p>UBC comes with a pre-delivered set of standard operations. Those are not mentioned in detail, see the dedicated documentation like <a class="" href="/products/UBC/BO/documentation">BO</a> instead.
 Detailed documentation, fields, field lengths and general schemas etc. can be directly accessed in Swagger UI.</p>
