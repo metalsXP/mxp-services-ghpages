@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">CDS View Generation (GDD) | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/QPPD/GRO/GDD/documentation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-QPPD-GRO-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-QPPD-GRO-current"><meta data-rh="true" property="og:title" content="CDS View Generation (GDD) | metalsXP services"><meta data-rh="true" name="description" content="Intro"><meta data-rh="true" property="og:description" content="Intro"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/QPPD/GRO/GDD/documentation"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/QPPD/GRO/GDD/documentation" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/QPPD/GRO/GDD/documentation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CDS View Generation (GDD)","item":"https://metalsxp.services/products/QPPD/GRO/GDD/documentation"}]}</script><link rel="stylesheet" href="/assets/css/styles.a4adb105.css">
-<script src="/assets/js/runtime~main.96beaf24.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.4c0a748b.js" defer="defer"></script>
 <script src="/assets/js/main.a20ef168.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -134,6 +134,10 @@ Possible Errors are:</p>
 <ul>
 <li class="">
 <p>as the view fields will be typed, Data Elements needs to be generated. The same as for the <a class="" href="/products/QPPD/GRO/GDE/documentation">Data Element Generation (GDE)</a> applies</p>
+</li>
+<li class="">
+<p>do not redefine &quot;Technical Object&quot; and/or &quot;Conversion Method&quot; on Object Type -&gt; Element group level. The definition of data elements/technical object has to match to the element
+technical background: currently data elements are generated for &quot;Elements&quot; only, not for the redefinitions. The Technical Object has to be compatible to this. All other redefinitions like &quot;MIN/MAX&quot; are OK though</p>
 </li>
 <li class="">
 <p>Due to limited <code>CAST</code> functionality in ABAP CDS Views, you need to tick the checkbox &quot;save NUM table&quot; while assigning an Object type to a Specification (<code>/SCT/QP_C25</code> or <code>/SCT/QP_C30</code>) <strong>if</strong> you have any numeric Element assigned <strong>and</strong> need to have that Element in your View. If &quot;save NUM table&quot; is active, every numeric Element (more precise: Elements with conversion type <code>FLTP</code> or <code>PMK</code> elements) gets persisted technically not even in <code>/SCT/QP_VAL</code>/<code>/SCT/QP_PMK</code> but also in <code>/SCT/QP_NUM</code>. For the View Generator is is the possible to cast based on the numeric value and to generate also the fields for numeric Elements.
