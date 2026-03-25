@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">I/O Monitoring (UBC.io) | metalsXP services</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://metalsxp.services/products/UBC/IO/documentation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="SAP, metalsXP"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-UBC-current"><meta data-rh="true" property="og:title" content="I/O Monitoring (UBC.io) | metalsXP services"><meta data-rh="true" name="description" content="Introduction"><meta data-rh="true" property="og:description" content="Introduction"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://metalsxp.services/products/UBC/IO/documentation"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/IO/documentation" hreflang="en"><link data-rh="true" rel="alternate" href="https://metalsxp.services/products/UBC/IO/documentation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"I/O monitoring (UBC.io)","item":"https://metalsxp.services/products/UBC/IO/documentation"}]}</script><link rel="stylesheet" href="/assets/css/styles.a4adb105.css">
-<script src="/assets/js/runtime~main.e7fb194d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5f4e8421.js" defer="defer"></script>
 <script src="/assets/js/main.a20ef168.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -214,7 +214,7 @@ By default, all mappings that cannot be executed successfully (e.g., due to a mi
 <p>An inbound interface can have more than one LUW. For example, when dealing with multiple goods movements in one interface, you must commit each goods movement.</p>
 <p>To be restartable, an interface should consist of only one LUW (commit or not).</p>
 <p>To fulfill the above requirement, you can configure &quot;multi steps&quot; interfaces to support more than one LUW, controlled by a single interface (and a top-level operation defining the message payload). Please see implementation details: <a href="#multi-step-interfaces" class="">Multi Step Interfaces</a>.</p>
-<p><img decoding="async" loading="lazy" alt="Multi steps Customizing" src="/assets/images/image_028-a37c54dbc2a2bfcd5d70e15f7f9f069c.png" width="1731" height="399" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Multi steps Customizing" src="/assets/images/image_028-7b4e519660434ba28a24273935fb6ed9.png" width="1855" height="416" class="img_ev3q"></p>
 <p>In this scenario, your top-level operation, entered in section <a href="#assign-technical-interfaces-to-ubcio-interface" class="">Assign technical interfaces to UBC.io interface</a>, is just for defining the message payload, which will be shared across the configured steps.</p>
 <ul>
 <li class="">
@@ -236,6 +236,10 @@ Ignore errors, complete step, and continue with execution.</p>
 <li class="">
 <p><strong>Restart always</strong>
 If step 10 was completed and 20 fails, on restart step 10 will not be executed again. Except in the case that step 10 was marked as &quot;restart always.&quot;</p>
+</li>
+<li class="">
+<p><strong>Separate session</strong>
+The step will be executed in a new, dedicated session (sandboxed). Useful, for example when using SAP standard modules which does not clean everything up, to not influence following steps.</p>
 </li>
 </ul>
 <h6 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="multi-index-tables">Multi-Index Tables<a href="#multi-index-tables" class="hash-link" aria-label="Direct link to Multi-Index Tables" title="Direct link to Multi-Index Tables" translate="no">​</a></h6>
